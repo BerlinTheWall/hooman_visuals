@@ -8,7 +8,7 @@ const AboutScreen = () => {
   return (
     <div className="flex min-h-dvh items-center justify-center py-6">
       <Container>
-        <div className="mx-auto w-full max-w-2xl rounded-sm bg-blue-100 px-4 py-6 sm:px-9 sm:py-14">
+        <div className="mx-auto w-full max-w-2xl rounded-sm bg-blue-200 px-4 py-6 sm:px-9 sm:py-14">
           <h1 className="xs:text-3xl text-2xl font-semibold uppercase md:text-5xl">
             Hooman Shahidi
           </h1>

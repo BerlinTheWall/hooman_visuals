@@ -12,8 +12,13 @@ export async function generateStaticParams() {
 }
 
 // Dynamic metadata per preset
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const preset = PRESETS.find((img) => String(img.id) === params.id);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const preset = PRESETS.find((img) => String(img.id) === id);
 
   if (!preset) {
     return {
@@ -29,8 +34,8 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 }
 
 // Page component
-export default function PresetPage({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default async function PresetPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const preset = PRESETS.find((img) => String(img.id) === id);
 
   if (!preset) return notFound();

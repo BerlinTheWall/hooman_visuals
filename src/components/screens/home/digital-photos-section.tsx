@@ -15,8 +15,15 @@ const DigitalPhotosSection = () => {
   // }, [project, category]);
 
   return (
-    <div className="mt-10 md:mt-20">
-      <h2 className="mb-10 ml-5 text-2xl font-bold sm:text-5xl">Digital Photos</h2>
+    <section id="photos" className="mt-12 scroll-mt-28 md:mt-20">
+      <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p className="text-xs tracking-[0.2em] text-zinc-500 uppercase">Portfolio</p>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+            Digital Photos
+          </h2>
+        </div>
+      </div>
       {/* <div className="flex gap-5">
         <SelectBox
           value={project || undefined}
@@ -33,9 +40,9 @@ const DigitalPhotosSection = () => {
       </div> */}
 
       <div className="mt-8">
-        <Masonry items={IMAGES} />
+        <Masonry items={IMAGES} className="!gap-4 md:!gap-6" />
       </div>
-    </div>
+    </section>
   );
 };
 

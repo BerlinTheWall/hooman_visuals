@@ -44,26 +44,23 @@ const HomeScreen = () => {
         speed={2000}
         modules={[Autoplay]}
       >
-        <Image
-          src="/logo3.png"
-          alt="logo"
-          sizes="100vw"
-          style={{
-            width: "33%",
-            height: "auto",
-            maxHeight: 60,
-            objectFit: "contain",
-          }}
-          className="absolute top-1/2 left-1/2 z-[50] h-auto min-w-[150px] -translate-x-1/2 -translate-y-1/2"
-          width={100}
-          height={250}
-          loading="eager"
-          priority
-        />
+        <div className="pointer-events-none absolute inset-0 z-[45] bg-gradient-to-t from-black/80 via-black/35 to-black/25" />
+        <div className="absolute inset-0 z-[50] flex items-center justify-center px-4">
+          <div className="mx-auto w-full max-w-3xl text-center text-white">
+            <Image
+              src="/logo3.png"
+              alt="logo"
+              width={180}
+              height={80}
+              loading="eager"
+              priority
+              className="mx-auto mb-6 h-auto w-[45%] max-w-[280px] min-w-[160px] object-contain drop-shadow-[0_8px_30px_rgba(0,0,0,0.6)]"
+            />
+          </div>
+        </div>
         {BANNERS.map((banner) => (
           <SwiperSlide key={banner.src}>
-            <div className="xs:h-[300px] relative h-[200px] w-full select-none md:h-[550px]">
-              <div className="absolute inset-0 z-40 bg-black/40" />
+            <div className="xs:h-[360px] relative h-[280px] w-full select-none md:h-[620px]">
               <Image
                 src={banner.src}
                 alt={banner.alt}
@@ -77,21 +74,45 @@ const HomeScreen = () => {
         ))}
       </Swiper>
 
-      <Container className="pb-10">
-        <div className="my-10">
-          <h2 className="mb-5 ml-5 text-center text-3xl font-bold">Before and After</h2>
-          <div className="flex justify-center">
-            <BeforeAfter
-              before={before1.src}
-              after={after1.src}
-              skeltonClassName="w-1/2 h-[300px] "
-              style={{ width: 300, height: "auto" }}
-              handleClassName="size-12"
-            />
+      <Container className="py-12 md:py-16">
+        <section className="relative overflow-hidden rounded-3xl border border-zinc-200 bg-gradient-to-br from-zinc-950 via-zinc-800 to-zinc-950 p-6 text-white shadow-2xl md:p-10">
+          <div className="pointer-events-none absolute -top-24 -right-16 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:items-center">
+            <div>
+              <p className="mb-3 text-xs tracking-[0.22em] text-white/70 uppercase">
+                Preview The Difference
+              </p>
+              <h2 className="text-3xl leading-tight font-bold sm:text-4xl">
+                From flat capture to finished grade
+              </h2>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/80 sm:text-base">
+                Drag the slider and see how the preset treatment shifts mood, contrast, and color
+                separation in a real edit workflow.
+              </p>
+              <div className="xs:grid-cols-3 mt-6 grid max-w-xl grid-cols-2 gap-3">
+                <div className="rounded-2xl border border-white/20 bg-white/5 px-3 py-4">
+                  <p className="text-xl font-bold">4+</p>
+                  <p className="mt-1 text-xs text-white/70 uppercase">Total Presets</p>
+                </div>
+                <div className="rounded-2xl border border-white/20 bg-white/5 px-3 py-4">
+                  <p className="text-xl font-bold">Pro</p>
+                  <p className="mt-1 text-xs text-white/70 uppercase">Color Profiles</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <BeforeAfter
+                before={before1}
+                after={after1}
+                skeltonClassName="h-[510px] w-[340px]"
+                style={{ width: 340, height: "auto" }}
+                handleClassName="size-12"
+              />
+            </div>
           </div>
-        </div>
-        <PresetsSection />
+        </section>
 
+        <PresetsSection />
         <DigitalPhotosSection />
       </Container>
     </>

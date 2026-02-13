@@ -9,7 +9,7 @@ const ContactScreen = () => {
   return (
     <div className="flex min-h-dvh items-center justify-center py-6">
       <Container>
-        <div className="relative mx-auto w-full max-w-xl rounded-sm bg-blue-100 shadow-sm shadow-gray-300">
+        <div className="relative mx-auto w-full max-w-xl overflow-hidden rounded-sm bg-blue-200 shadow-sm shadow-gray-300">
           <div className="relative h-40 min-w-40">
             <Image
               src={me1}

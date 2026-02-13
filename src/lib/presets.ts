@@ -4,8 +4,8 @@ import presetBox1 from "../../public/preset-box/MC-Box3.png";
 import presetBox3 from "../../public/preset-box/NU-box.png";
 import presetBox from "../../public/preset-box/ult-box-3.png";
 import presetLogo2 from "../../public/preset-cover/FV.png";
-import presetLogo from "../../public/preset-cover/ult-.jpeg";
 import presetLogo1 from "../../public/preset-cover/MC.png";
+import presetLogo from "../../public/preset-cover/ult-.jpeg";
 import presetLogo3 from "../../public/preset-cover/UN.png";
 
 export const PRESETS: IPreset[] = [
@@ -14,6 +14,7 @@ export const PRESETS: IPreset[] = [
     src: presetBox1,
     srcHover: presetLogo1,
     sliders: [presetBox1, presetLogo1],
+    presetsCount: 17,
     name: "Cinematic & Moods Pack",
     html: `<section class="space-y-3">
         <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 ">
@@ -67,14 +68,15 @@ export const PRESETS: IPreset[] = [
       </section>
       `,
     price: 100,
-    purchaseLink: "https://www.google.com",
+    purchaseLink:
+      "https://hoomanvisuals.lemonsqueezy.com/checkout/buy/3f7bdf67-c30d-452b-b0cd-25686a31a449",
   },
   {
     id: 1,
     src: presetBox2,
     srcHover: presetLogo2,
     sliders: [presetBox2, presetLogo2],
-
+    presetsCount: 21,
     name: "Film & Vintage Pack",
     html: `<section class="space-y-3">
   <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 ">
@@ -150,14 +152,25 @@ export const PRESETS: IPreset[] = [
   </p>
 </section>`,
     price: 100,
-    purchaseLink: "https://www.google.com",
+    purchaseLink:
+      "https://hoomanvisuals.lemonsqueezy.com/checkout/buy/3f7bdf67-c30d-452b-b0cd-25686a31a449",
   },
 
   {
     id: 3,
     src: presetBox3,
     srcHover: presetLogo3,
-    sliders: [presetBox3, presetLogo3],
+    sliders: [
+      presetBox3,
+      presetLogo3,
+      presetBox1,
+      presetLogo1,
+      presetBox2,
+      presetLogo2,
+      presetBox,
+      presetLogo,
+    ],
+    presetsCount: 20,
     name: "Urban & Night Pack",
     html: `<section class="space-y-3">
   <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 ">
@@ -217,13 +230,15 @@ export const PRESETS: IPreset[] = [
   </p>
 </section>`,
     price: 100,
-    purchaseLink: "https://www.google.com",
+    purchaseLink:
+      "https://hoomanvisuals.lemonsqueezy.com/checkout/buy/3f7bdf67-c30d-452b-b0cd-25686a31a449",
   },
   {
     id: 4,
     src: presetBox,
     srcHover: presetLogo,
     sliders: [presetBox, presetLogo],
+    presetsCount: 58,
     name: "The Complete HV Preset Bundle Pack",
     html: `<section class="space-y-3">
   <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 ">
@@ -309,6 +324,7 @@ export const PRESETS: IPreset[] = [
   </p>
 </section>`,
     price: 100,
-    purchaseLink: "https://www.google.com",
+    purchaseLink:
+      "https://hoomanvisuals.lemonsqueezy.com/checkout/buy/3f7bdf67-c30d-452b-b0cd-25686a31a449",
   },
 ];

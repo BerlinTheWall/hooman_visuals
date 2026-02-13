@@ -8,6 +8,7 @@ export interface IPreset {
   html: string;
   name: string;
   price: number;
+  presetsCount: number;
   disabled?: boolean;
   purchaseLink: string;
 }

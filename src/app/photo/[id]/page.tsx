@@ -11,8 +11,13 @@ export async function generateStaticParams() {
 }
 
 // Dynamic metadata per preset
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const photo = IMAGES.find((img) => String(img.id) === params.id);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const photo = IMAGES.find((img) => String(img.id) === id);
 
   if (!photo) {
     return {

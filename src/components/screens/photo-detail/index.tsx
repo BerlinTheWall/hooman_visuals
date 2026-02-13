@@ -49,12 +49,15 @@ const PhotoScreen = ({ photo }: { photo: IPhoto }) => {
           >
             {photo.dimension.map((dimension) => (
               <SwiperSlide key={dimension}>
-                <img
+                <Image
                   onContextMenu={stopContext}
                   onDragStart={stopDrag}
                   alt={photo.name}
-                  src={photo.src.src}
-                  className="h-full w-full"
+                  src={photo.src}
+                  width={photo.src.width}
+                  height={photo.src.height}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="h-full w-full object-contain"
                 />
 
                 <div className="absolute inset-x-0 top-0 flex gap-2 p-3 text-white sm:p-4">
